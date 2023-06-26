@@ -1,0 +1,27 @@
+@import url(common.css);
+
+main section {
+  background-color: bisque;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+main section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+main section p {
+  line-height: 1.5;
+}
+
+/* メディアクエリ（最大幅575） */
+@media (max-width: 575px) {
+  p.visual img {
+    height: 300px;
+    /* 縦横比を崩したくないimgやvideoには有効 */
+    object-fit: cover;
+    object-position: left;
+  }
+}

@@ -1,0 +1,122 @@
+@import url(common.css);
+
+/* 下余白:10px、行の高さ:1.5 */
+main article > p {
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+/* 文字サイズ:14px、行の高さ:1.5、行頭文字:・、外側左余白:1.5em、下余白:20px */
+main aside ul {
+  font-size: 14px;
+  line-height: 1.5;
+  /* 行頭文字を・にしたい */
+  list-style-type: disc;
+  margin-left: 1.5em;
+  padding-bottom: 20px;
+}
+/* 幅:80%、中央配置 */
+main form {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* FlexBox、下余白:20px、縦方向の位置:ベースライン */
+main dl div {
+  display: flex;
+  margin-bottom: 20px;
+  /* １行目同士で隣と揃えたい */
+  align-items: baseline;
+}
+
+/* 太字、幅:12em */
+main dt {
+  font-weight: bold;
+  flex-basis: 12em;
+}
+
+/* 文字サイズ:11px、左余白:5px */
+main dt span {
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+/* 幅比率:auto */
+main dd {
+  flex: auto;
+}
+
+/* 幅:100%、内側余白:8px、アウトライン:なし */
+main input[type="text"],
+main input[type="email"],
+main textarea {
+  width: 100%;
+  padding: 8px;
+  /* ボックスをクリックした時に枠が太字化するのをやめたい */
+  outline: none;
+}
+
+/* 右余白:10px */
+main dd label {
+  padding-right: 10px;
+}
+
+/* 高さ:12em、行の高さ:1.5、リサイズ:垂直 */
+main textarea {
+  height: 12em;
+  line-height: 1.5;
+  /* ユーザーが内容ボックスの枠形を勝手に変えられるのは縦だけにしたい */
+  resize: vertical;
+}
+
+/* 縦方向の位置:上、内側上余白:15px */
+main dl div:last-child dt {
+  /* 内容の題名位置を先頭に調整移動したい */
+  align-self: flex-start;
+  padding-top: 15px;
+}
+
+/* 上ボーダー:1px 直線 #666、内側上余白:20px、中央揃え */
+main form p {
+  border-top: 1px solid #666;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* 内側上下余白:10px、内側左右余白:30px、文字間隔:8px、ボーダー:1px 直線 #666、背景色:#fff、角丸:30px、マウスカーソル:リンク */
+main form button {
+  padding: 10px 22px 10px 30px;
+  letter-spacing: 8px;
+  border: 1px solid #666;
+  background-color: #fff;
+  border-radius: 30px;
+  /* マウスを当てた時に指表示にしたい */
+  cursor: pointer;
+}
+
+/* 不透明度:0.7 */
+main form button:hover {
+  opacity: 0.7;
+}
+
+/* メディアクエリ */
+@media (max-width: 767px) {
+  main form {
+    /* 幅:auto 。widthの初期値はauto*/
+    width: auto;
+  }
+}
+
+/* メディアクエリ */
+@media (max-width: 575px) {
+  main dl div {
+    /* フレックスをブロック化したい */
+    display: block;
+  }
+  /* 内側上余白:15px、下ボーダー:1px 直線 #666、内側下余白:5px、外側下余白:10px */
+  main dt {
+    padding-top: 15px;
+    border-bottom: 1px #666 solid;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+}

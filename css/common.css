@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=M+PLUS+Rounded+1c:wght@300&display=swap");
+/* フォントをインポートした↑ */
+
+/* 自動スクロール */
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #333;
+  font-size: 16px;
+  font-family: "Yu Gothic Medium", YuGothic, sans-serif;
+  background-color: beige;
+}
+a {
+  transition: 0.5s;
+  color: inherit;
+  text-decoration: none;
+}
+[class^="material-"] {
+  font-size: inherit;
+  vertical-align: -0.1em;
+}
+.container {
+  background-color: #fff;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+header h1 {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Bagel Fat One", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+/* 目次コンテナをスティッキー設定 */
+nav {
+  border-top: 2px solid brown;
+  border-bottom: 2px solid brown;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.774);
+  & li {
+    /* ブロックをインライン化 */
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #54410c;
+  }
+  & a {
+    :hover {
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+    .active {
+      font-weight: bold;
+    }
+  }
+  @media (max-width: 767px) {
+    & {
+      position: unset;
+    }
+  }
+}
+main {
+  padding-bottom: 30px;
+}
+/* 下層ページ設定 */
+main article h1 {
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  background-image: url(../img/h1_bg.jpg);
+  line-height: 80px;
+  background-size: cover;
+  background-position: center;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.6);
+}
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+/*［ページトップ］固定配置、右:12px、下:9px */
+footer p.pagetop {
+  /* 固定配置の設定 */
+  position: fixed;
+  /* 画面右12、下９ */
+  right: 12px;
+  bottom: 9px;
+}
+
+/* 不透明度:0.7 */
+footer p.pagetop a:hover {
+  opacity: 0.7;
+}
+
+/*［著作権］幅:980px、中央配置、右揃え */
+footer p.copyright {
+  /* 最大幅980px設定 */
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: right;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+p.copyright small {
+  /* 幅の割合表示 */
+  width: 80%;
+}
+
+/* ------------------------------------------------------- */
+/* レスポンシブ */
+/* 単発で@mediaを複数タグの直下に記述してもOK */
+/* メディアクエリ（最大幅767）を設定する */
+@media (max-width: 767px) {
+  header h1 {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  nav {
+    /* スマホの時はstickyやめたいからunsetにする */
+    position: unset;
+  }
+  footer p.copyright {
+    /* スマホの時は中央揃えにする */
+    text-align: center;
+  }
+}
+/* メディアクエリ（最大幅575） */
+@media (max-width: 575px) {
+  nav li {
+    /* インラインをブロック化 */
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  p.visual img {
+    height: 300px;
+    /* 縦横比を崩したくないimgやvideoには有効 */
+    object-fit: cover;
+    object-position: left;
+  }
+
+  footer p.copyright span {
+    /* htmlでクラス化した著作権の一部分を非表示にしたい */
+    display: none;
+  }
+}
